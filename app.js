@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+app.set('port',  process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
